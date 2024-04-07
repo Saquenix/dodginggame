@@ -216,7 +216,7 @@ def hard():
         
  
         if x > display_width - car_width or x < 0:
-            crash(dodged)  # Pass the dodged score to the crash function
+            crash(dodged)
 
         if thing_starty > display_height:
             thing_starty = 0 - thing_height
@@ -227,7 +227,7 @@ def hard():
             
         if y < thing_starty+thing_height:
             if x > thing_startx and x < thing_startx + thing_width or x+car_width > thing_startx and x + car_width < thing_startx+thing_width:
-                crash(dodged)  # Pass the dodged score to the crash function
+                crash(dodged)
                   
         
         pygame.display.update()
@@ -254,7 +254,6 @@ def medium():
  
     gameExit = False
 
- 
     while not gameExit:
  
         for event in pygame.event.get():
@@ -288,9 +287,8 @@ def medium():
         
  
         if x > display_width - car_width or x < 0:
-            crash()
+            crash(dodged)
 
- 
         if thing_starty > display_height:
             thing_starty = 0 - thing_height
             thing_startx = random.randrange(0,display_width)
@@ -299,16 +297,13 @@ def medium():
             thing_width += (dodged * 1.2)
             
         if y < thing_starty+thing_height:
-            print('y crossover')
- 
             if x > thing_startx and x < thing_startx + thing_width or x+car_width > thing_startx and x + car_width < thing_startx+thing_width:
-                print('x crossover')
-                crash()
+                crash(dodged) 
                   
         
         pygame.display.update()
         clock.tick(60)
-        
+
 def game_loop():
     global pause
     pygame.mixer.Sound.play(car_sound)
