@@ -148,7 +148,7 @@ def game_intro():
                 
         gameDisplay.fill(grey)
         largeText = pygame.font.SysFont("lucidasans",115)
-        TextSurf, TextRect = text_objects("DODGE EM", largeText)
+        TextSurf, TextRect = text_objects("Dodge the box", largeText)
         TextRect.center = ((display_width/2),(display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
 
